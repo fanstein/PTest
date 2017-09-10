@@ -1,0 +1,29 @@
+.page{
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background:rebeccapurple;
+}
+.server_box{
+  border-radius:3px;
+  position:relative;
+  margin:20% 20%;
+  width:400px;
+  padding:50px 50px;
+  display:table;
+  background-color:orange;
+}
+.server_text{
+    text-align:center;
+    width:450px;
+    height:auto;
+    clear:both;
+    font-weight:500;
+    font-size:1.75em;
+}

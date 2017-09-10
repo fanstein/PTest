@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+<head>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<img src="{% static "images/sitelogo.png" %}" alt="Logo"/>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <h1>Performance</h1>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="active">关键接口</li>
+                <li> <a href="#">所有接口</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a hrep="#">{% block user %}{% endblock %}</a></li>
+                <li><a href="/logout/">退出</a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+{% block content %}{% endblock %}
+</body>
+</html>
