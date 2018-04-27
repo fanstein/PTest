@@ -3,23 +3,38 @@
 <head>
     {% load bootstrap3 %}
     {% bootstrap_css %}
-    {% bootstrap_javascript %}
+    {% bootstrap_javascript jquery=1%}
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-<img src="{% static "images/sitelogo.png" %}" alt="Logo"/>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-brand">
-            <h1>Performance</h1>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-heard">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Performance</a>
+            <a class="navbar-brand" href="#">
+                <img src="{% static "images/sitelogo.png" %}" alt="Logo"/>
+            </a>
         </div>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li class="active">关键接口</li>
-                <li> <a href="#">所有接口</a></li>
+                <li><a href="#">关键接口</a></li>
+                <li><a href="#">所有接口</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       role="button" aria-haspopup="true" aria-expanded="false">接口分类<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">查询引擎组</a></li>
+                        <li><a href="#">搜索开发组</a></li>
+                        <li><a href="#">产品运营组</a></li>
+                    </ul>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a hrep="#">{% block user %}{% endblock %}</a></li>
+                <li><a hre="#">{% block user %}{% endblock %}</a></li>
                 <li><a href="/logout/">退出</a></li>
             </ul>
         </div>
@@ -27,5 +42,6 @@
 
 </nav>
 {% block content %}{% endblock %}
+
 </body>
 </html>
